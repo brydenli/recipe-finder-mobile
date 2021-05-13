@@ -39,6 +39,7 @@ const recipe_style = StyleSheet.create({
 		fontSize: 15,
 		fontWeight: 'bold',
 		textAlign: 'center',
+		marginBottom: '1%',
 	},
 });
 
