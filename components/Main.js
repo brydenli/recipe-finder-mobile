@@ -7,7 +7,7 @@ import {
 	View,
 	Image,
 	ScrollView,
-	TouchableWithoutFeedback,
+	TouchableHighlight,
 } from 'react-native';
 import main_styles from '../styles/Main_style';
 import axios from 'axios';
@@ -52,7 +52,7 @@ const Main = ({ navigation }) => {
 							return (
 								<View style={main_styles.meal_container} key={meal.idMeal}>
 									<Text style={main_styles.meal_name}>{meal.strMeal}</Text>
-									<TouchableWithoutFeedback
+									<TouchableHighlight
 										onPress={() => navigation.navigate('Recipe-Details', meal)}
 									>
 										<Image
@@ -63,7 +63,7 @@ const Main = ({ navigation }) => {
 												alignSelf: 'center',
 											}}
 										/>
-									</TouchableWithoutFeedback>
+									</TouchableHighlight>
 								</View>
 							);
 						})}

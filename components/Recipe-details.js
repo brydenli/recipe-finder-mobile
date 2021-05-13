@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 import axios from 'axios';
+import recipe_style from '../styles/Recipe-details_style';
 
 const Recipe_Detail = ({ navigation, route }) => {
 	const [ingredients, setIngredients] = useState([]);
@@ -79,38 +80,43 @@ const Recipe_Detail = ({ navigation, route }) => {
 	}, []);
 
 	return (
-		<View>
+		<View style={recipe_style.container}>
 			<ScrollView>
-				<Text>{route.params.strMeal}</Text>
+				<Text style={recipe_style.recipe_name}>{route.params.strMeal}</Text>
 				<Image
 					source={{ uri: route.params.strMealThumb }}
-					style={{ width: 300, height: 300 }}
+					style={{ width: 300, height: 300, alignSelf: 'center' }}
 				/>
 				<View>
-					<Text>Ingredient</Text>
-					<Text>Amount</Text>
-					{ingredients
-						.filter((item) => item.length > 0)
-						.map((item) => {
-							return (
-								<View key={ingredients.indexOf(item) + 'view'}>
-									{item ? (
-										<View>
-											<Text key={ingredients.indexOf(item) + 'ingredient'}>
-												{item}
-											</Text>
-											<Text key={ingredients.indexOf(item) + 'measure'}>
-												{measures[ingredients.indexOf(item)]}
-											</Text>
-										</View>
-									) : (
-										<View></View>
-									)}
-								</View>
-							);
-						})}
-					<View>
-						<Text>Instructions:</Text>
+					<View style={recipe_style.subcontainer1}>
+						<Text style={recipe_style.header_text}>Ingredients</Text>
+						<Text style={recipe_style.header_text}>Amount</Text>
+					</View>
+					{ingredients &&
+						ingredients
+							.filter((item) => item.length > 0)
+							.map((item) => {
+								return (
+									<View key={ingredients.indexOf(item) + 'view'}>
+										{item ? (
+											<View style={recipe_style.table_row}>
+												<Text key={ingredients.indexOf(item) + 'ingredient'}>
+													{item}
+												</Text>
+												<Text key={ingredients.indexOf(item) + 'measure'}>
+													{measures[ingredients.indexOf(item)]}
+												</Text>
+											</View>
+										) : (
+											<View></View>
+										)}
+									</View>
+								);
+							})}
+					<View style={recipe_style.subcontainer2}>
+						<Text style={recipe_style.header_text_instructions}>
+							Instructions
+						</Text>
 						<Text>{instructions}</Text>
 					</View>
 				</View>
