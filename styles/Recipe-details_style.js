@@ -41,6 +41,11 @@ const recipe_style = StyleSheet.create({
 		textAlign: 'center',
 		marginBottom: '1%',
 	},
+	region_text: {
+		fontWeight: 'bold',
+		textAlign: 'center',
+		marginTop: '2%',
+	},
 });
 
 export default recipe_style;

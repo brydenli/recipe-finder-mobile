@@ -22,7 +22,6 @@ const Main = ({ navigation }) => {
 			.get('http://www.themealdb.com/api/json/v1/1/filter.php?i=' + ingredient)
 			.then(async (res) => {
 				await setMeals(res.data.meals);
-				console.log(meals);
 			})
 			.catch((err) => console.log(err));
 	};

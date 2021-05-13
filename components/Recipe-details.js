@@ -3,12 +3,11 @@ import { View, Text, Image, ScrollView } from 'react-native';
 import axios from 'axios';
 import recipe_style from '../styles/Recipe-details_style';
 
-const Recipe_Detail = ({ navigation, route }) => {
+const Recipe_Detail = ({ route }) => {
 	const [ingredients, setIngredients] = useState([]);
 	const [measures, setMeasures] = useState([]);
 	const [region, setRegion] = useState('');
 	const [instructions, setInstructions] = useState('');
-	const [instructionList, setInstructionList] = useState([]);
 
 	useEffect(() => {
 		let response = {};
@@ -19,7 +18,6 @@ const Recipe_Detail = ({ navigation, route }) => {
 			)
 			.then(async (res) => {
 				response = res.data.meals[0];
-				console.log(response);
 				setRegion(response.strArea);
 				setInstructions(response.strInstructions);
 				setIngredients([
@@ -87,6 +85,8 @@ const Recipe_Detail = ({ navigation, route }) => {
 					source={{ uri: route.params.strMealThumb }}
 					style={{ width: 300, height: 300, alignSelf: 'center' }}
 				/>
+				<Text style={recipe_style.region_text}>Region: {region}</Text>
+
 				<View>
 					<View style={recipe_style.subcontainer1}>
 						<Text style={recipe_style.header_text}>Ingredients</Text>
