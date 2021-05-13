@@ -23,6 +23,7 @@ const main_styles = StyleSheet.create({
 		fontSize: 40,
 		textAlign: 'center',
 		fontFamily: 'Rubik-med',
+		color: 'white',
 	},
 	input_text: {
 		marginTop: '2%',
