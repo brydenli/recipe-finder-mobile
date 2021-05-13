@@ -7,7 +7,7 @@ import {
 	View,
 	Image,
 	ScrollView,
-	TouchableHighlight,
+	TouchableWithoutFeedback,
 } from 'react-native';
 import main_styles from '../styles/Main_style';
 import axios from 'axios';
@@ -29,7 +29,7 @@ const Main = ({ navigation }) => {
 
 	return (
 		<View style={main_styles.container}>
-			<ScrollView>
+			<ScrollView showsVerticalScrollIndicator={false}>
 				<View style={main_styles.subcontainer1}>
 					<Text style={main_styles.title_text}>Recipe-Finder</Text>
 					<TextInput
@@ -40,7 +40,7 @@ const Main = ({ navigation }) => {
 					/>
 					<Button
 						style={main_styles.button}
-						title='submit'
+						title='search'
 						onPress={(e) => handleSubmit(e)}
 					/>
 					<StatusBar style='auto' />
@@ -52,7 +52,7 @@ const Main = ({ navigation }) => {
 							return (
 								<View style={main_styles.meal_container} key={meal.idMeal}>
 									<Text style={main_styles.meal_name}>{meal.strMeal}</Text>
-									<TouchableHighlight
+									<TouchableWithoutFeedback
 										onPress={() => navigation.navigate('Recipe-Details', meal)}
 									>
 										<Image
@@ -63,7 +63,7 @@ const Main = ({ navigation }) => {
 												alignSelf: 'center',
 											}}
 										/>
-									</TouchableHighlight>
+									</TouchableWithoutFeedback>
 								</View>
 							);
 						})}

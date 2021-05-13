@@ -81,7 +81,7 @@ const Recipe_Detail = ({ navigation, route }) => {
 
 	return (
 		<View style={recipe_style.container}>
-			<ScrollView>
+			<ScrollView showsVerticalScrollIndicator={false}>
 				<Text style={recipe_style.recipe_name}>{route.params.strMeal}</Text>
 				<Image
 					source={{ uri: route.params.strMealThumb }}

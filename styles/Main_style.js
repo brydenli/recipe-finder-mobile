@@ -18,7 +18,7 @@ const main_styles = StyleSheet.create({
 		justifyContent: 'center',
 	},
 	title_text: {
-		marginTop: '2%',
+		marginTop: '35%',
 		fontSize: 40,
 		fontWeight: 'bold',
 		textAlign: 'center',
@@ -35,8 +35,10 @@ const main_styles = StyleSheet.create({
 		alignSelf: 'center',
 	},
 	meal_name: {
-		fontSize: 15,
+		fontSize: 16,
+		fontWeight: 'bold',
 		textAlign: 'center',
+		marginBottom: '1%',
 	},
 	meal_container: {
 		marginBottom: '5%',

@@ -8,7 +8,7 @@ const recipe_style = StyleSheet.create({
 		justifyContent: 'center',
 	},
 	recipe_name: {
-		marginTop: '3%',
+		marginTop: '15%',
 		marginBottom: '2%',
 		fontSize: 25,
 		fontWeight: 'bold',
