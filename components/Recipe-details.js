@@ -100,10 +100,16 @@ const Recipe_Detail = ({ route }) => {
 									<View key={ingredients.indexOf(item) + 'view'}>
 										{item ? (
 											<View style={recipe_style.table_row}>
-												<Text key={ingredients.indexOf(item) + 'ingredient'}>
+												<Text
+													key={ingredients.indexOf(item) + 'ingredient'}
+													style={recipe_style.text_regular}
+												>
 													{item}
 												</Text>
-												<Text key={ingredients.indexOf(item) + 'measure'}>
+												<Text
+													key={ingredients.indexOf(item) + 'measure'}
+													style={recipe_style.text_regular}
+												>
 													{measures[ingredients.indexOf(item)]}
 												</Text>
 											</View>
@@ -117,7 +123,7 @@ const Recipe_Detail = ({ route }) => {
 						<Text style={recipe_style.header_text_instructions}>
 							Instructions
 						</Text>
-						<Text>{instructions}</Text>
+						<Text style={recipe_style.text_regular}>{instructions}</Text>
 					</View>
 				</View>
 			</ScrollView>

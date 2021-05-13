@@ -11,7 +11,7 @@ const recipe_style = StyleSheet.create({
 		marginTop: '15%',
 		marginBottom: '2%',
 		fontSize: 25,
-		fontWeight: 'bold',
+		fontFamily: 'Rubik-med',
 		textAlign: 'center',
 	},
 	subcontainer1: {
@@ -23,7 +23,7 @@ const recipe_style = StyleSheet.create({
 	},
 	header_text: {
 		fontSize: 15,
-		fontWeight: 'bold',
+		fontFamily: 'Rubik-med',
 	},
 	table_row: {
 		flexDirection: 'row',
@@ -37,14 +37,17 @@ const recipe_style = StyleSheet.create({
 	},
 	header_text_instructions: {
 		fontSize: 15,
-		fontWeight: 'bold',
+		fontFamily: 'Rubik-med',
 		textAlign: 'center',
 		marginBottom: '1%',
 	},
 	region_text: {
-		fontWeight: 'bold',
+		fontFamily: 'Rubik-med',
 		textAlign: 'center',
 		marginTop: '2%',
+	},
+	text_regular: {
+		fontFamily: 'Rubik-reg',
 	},
 });
 

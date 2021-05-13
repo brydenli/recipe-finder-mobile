@@ -19,10 +19,10 @@ const main_styles = StyleSheet.create({
 	},
 	title_text: {
 		marginTop: '35%',
-		marginBottom: '2%',
+		marginBottom: '1%',
 		fontSize: 40,
-		fontWeight: 'bold',
 		textAlign: 'center',
+		fontFamily: 'Rubik-med',
 	},
 	input_text: {
 		marginTop: '2%',
@@ -37,9 +37,8 @@ const main_styles = StyleSheet.create({
 	},
 	meal_name: {
 		fontSize: 16,
-		fontWeight: 'bold',
 		textAlign: 'center',
-		marginBottom: '1%',
+		fontFamily: 'Rubik-reg',
 	},
 	meal_container: {
 		marginBottom: '5%',
