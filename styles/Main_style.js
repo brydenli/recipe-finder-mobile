@@ -19,6 +19,7 @@ const main_styles = StyleSheet.create({
 	},
 	title_text: {
 		marginTop: '35%',
+		marginBottom: '2%',
 		fontSize: 40,
 		fontWeight: 'bold',
 		textAlign: 'center',
