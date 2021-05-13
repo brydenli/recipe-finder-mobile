@@ -1,6 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { Button, Text, TextInput, View, Image, ScrollView } from 'react-native';
+import {
+	Button,
+	Text,
+	TextInput,
+	View,
+	Image,
+	ScrollView,
+	TouchableWithoutFeedback,
+} from 'react-native';
 import main_styles from '../styles/Main_style';
 import axios from 'axios';
 
@@ -31,13 +39,6 @@ const Main = ({ navigation }) => {
 					/>
 					<Button title='submit' onPress={(e) => handleSubmit(e)} />
 					<StatusBar style='auto' />
-					<Image
-						source={{
-							uri: 'https://www.themealdb.com/images/media/meals/d8f6qx1604182128.jpg',
-						}}
-						width={100}
-						height={100}
-					/>
 				</View>
 
 				<View style={main_styles.subcontainer2}>
@@ -46,10 +47,14 @@ const Main = ({ navigation }) => {
 							return (
 								<View key={meal.idMeal}>
 									<Text>{meal.strMeal}</Text>
-									<Image
-										source={{ uri: meal.strMealThumb }}
-										style={{ width: 300, height: 300 }}
-									/>
+									<TouchableWithoutFeedback
+										onPress={() => navigation.navigate('Recipe-Details', meal)}
+									>
+										<Image
+											source={{ uri: meal.strMealThumb }}
+											style={{ width: 300, height: 300 }}
+										/>
+									</TouchableWithoutFeedback>
 								</View>
 							);
 						})}
