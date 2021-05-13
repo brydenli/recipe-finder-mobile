@@ -94,7 +94,7 @@ const Recipe_Detail = ({ navigation, route }) => {
 					</View>
 					{ingredients &&
 						ingredients
-							.filter((item) => item.length > 0)
+							.filter((item) => item)
 							.map((item) => {
 								return (
 									<View key={ingredients.indexOf(item) + 'view'}>
