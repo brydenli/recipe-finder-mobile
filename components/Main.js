@@ -31,13 +31,18 @@ const Main = ({ navigation }) => {
 		<View style={main_styles.container}>
 			<ScrollView>
 				<View style={main_styles.subcontainer1}>
-					<Text>Recipe-Finder</Text>
+					<Text style={main_styles.title_text}>Recipe-Finder</Text>
 					<TextInput
+						style={main_styles.input_text}
 						value={ingredient}
 						onChangeText={setIngredient}
 						placeholder='Input Key Ingredient here'
 					/>
-					<Button title='submit' onPress={(e) => handleSubmit(e)} />
+					<Button
+						style={main_styles.button}
+						title='submit'
+						onPress={(e) => handleSubmit(e)}
+					/>
 					<StatusBar style='auto' />
 				</View>
 
@@ -45,14 +50,18 @@ const Main = ({ navigation }) => {
 					{meals &&
 						meals.map((meal) => {
 							return (
-								<View key={meal.idMeal}>
-									<Text>{meal.strMeal}</Text>
+								<View style={main_styles.meal_container} key={meal.idMeal}>
+									<Text style={main_styles.meal_name}>{meal.strMeal}</Text>
 									<TouchableWithoutFeedback
 										onPress={() => navigation.navigate('Recipe-Details', meal)}
 									>
 										<Image
 											source={{ uri: meal.strMealThumb }}
-											style={{ width: 300, height: 300 }}
+											style={{
+												width: 300,
+												height: 300,
+												alignSelf: 'center',
+											}}
 										/>
 									</TouchableWithoutFeedback>
 								</View>

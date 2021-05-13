@@ -81,7 +81,6 @@ const Recipe_Detail = ({ navigation, route }) => {
 	return (
 		<View>
 			<ScrollView>
-				<Text>{route.params.idMeal}</Text>
 				<Text>{route.params.strMeal}</Text>
 				<Image
 					source={{ uri: route.params.strMealThumb }}
@@ -90,24 +89,26 @@ const Recipe_Detail = ({ navigation, route }) => {
 				<View>
 					<Text>Ingredient</Text>
 					<Text>Amount</Text>
-					{ingredients.map((item) => {
-						return (
-							<View>
-								{item ? (
-									<View>
-										<Text key={ingredients.indexOf(item) + 'ingredient'}>
-											{item}
-										</Text>
-										<Text key={ingredients.indexOf(item) + 'measure'}>
-											{measures[ingredients.indexOf(item)]}
-										</Text>
-									</View>
-								) : (
-									<View></View>
-								)}
-							</View>
-						);
-					})}
+					{ingredients
+						.filter((item) => item.length > 0)
+						.map((item) => {
+							return (
+								<View key={ingredients.indexOf(item) + 'view'}>
+									{item ? (
+										<View>
+											<Text key={ingredients.indexOf(item) + 'ingredient'}>
+												{item}
+											</Text>
+											<Text key={ingredients.indexOf(item) + 'measure'}>
+												{measures[ingredients.indexOf(item)]}
+											</Text>
+										</View>
+									) : (
+										<View></View>
+									)}
+								</View>
+							);
+						})}
 					<View>
 						<Text>Instructions:</Text>
 						<Text>{instructions}</Text>
